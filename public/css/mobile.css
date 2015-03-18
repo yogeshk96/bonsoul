@@ -1,0 +1,248 @@
+@media (max-width: 1000px) {
+
+	.headertags{
+		display: none;
+	}
+
+	.mobile-menu{
+		display: inherit;
+		color: white;
+		font-size: 32px;
+		cursor: pointer;
+	}
+
+	ul#mm-0 li a {
+	  text-align: left;
+	  font-size: 12px;
+	  font-family: 'Lato',sans-serif;
+	}
+
+	span.mm-title {
+	  color: white;
+	  font-family: 'Lato', sans-serif;
+	}
+
+	em.mm-counter{
+		right: 54px!important;
+	  color: white!important;
+	  background-color: rgb(87, 178, 178);
+	  border-radius: 50%;
+	  width: 22px;
+	}
+
+	.bvsearch-container{
+		height: auto;
+		padding-bottom: 1em;
+	}
+
+	.bvsearch-container .bv-search-box input{
+		width: 20em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	 .pull-right.bv-search-bottom {
+			float: none!important;
+		}
+
+	.bvsearch-container .bv-search-box button{		
+		margin-left: 15em;
+	}
+
+	.bv-mid-container .bonmid-img{
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.bv-mid-container img{
+		padding-left: 0;
+		width: 350px;		
+	}
+
+	.bv-mid-container-text {
+		width: auto;
+	padding-left: 2em;	
+	}
+
+	.top-sections .top-card, .top-sections .hour-card{
+		width: 90%;
+		margin-top: 2em;
+	}
+
+	footer h3, li, ul{
+		color: white;	
+		text-align: center;
+	}
+
+	.separator{
+		width: 90%;
+	}
+
+	.social-logo{
+		margin-left: 14em;
+	}
+
+	.s-logo{
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.prof-services, .curr-loc{
+		width: 22em;
+		box-shadow: -12px 33px 46px -12px rgba(15, 9, 9, 1);
+	}
+
+	
+
+	footer .separator, footer .inner-footercontainer-2 {
+		display: none;
+	}
+
+
+	/* Search Page */
+
+	.search-box, .filter-container{
+		display: none;
+	}
+
+	.stylist-search-container{
+		border-left: 0;
+		border-right: 0;
+
+	}
+
+
+	#search-header .wrapper{
+		width: 100%;
+	}
+
+	.mobile-filter{
+		width: 2em;
+		height: 2em;
+		position: fixed;
+		top: 75%;
+		right: 3%;
+		display: inherit;
+		/* padding: 2%; */
+		font-size: 25px;
+		padding-left: .5em;
+		padding-top: .3em;
+		cursor: pointer;
+		z-index: 999;
+
+		-webkit-box-shadow: 1px 25px 105px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 25px 105px -9px rgba(0,0,0,0.75);
+box-shadow: 1px 25px 105px -9px rgba(0,0,0,0.75);
+	}
+
+	.mobile-filter-container{
+
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  padding-left: 5%;
+		  width: 70%;
+		  height: 90%;
+		  z-index: 2;
+		  background: #ffffff;
+}
+
+
+
+}
+
+@media only screen and (max-width: 480px) {
+
+
+	.bonvoguecontainer h2{
+		padding-top: 5em;
+	}
+
+
+	.bvsearch-container{
+		width: 90%;
+		padding-right: .5em;
+		/*background-color: rgba(28, 32, 48, 0.84);*/
+	}
+
+	.bvsearch-container .bv-search-box button{		
+		margin-left: 4.5em;
+	}
+
+
+	.top-sections .top-card, .top-sections .hour-card{
+		width: 85%;
+		margin-top: 2em;
+	}
+
+	.bv-mid-container .bonmid-img{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.social-logo{
+		width: 100%;
+		margin-left: auto;
+	}
+
+
+	.search-box{
+		display: none;
+	}
+
+	.mobile-filter{
+		width: 50px;
+		height: 50px;
+		padding-left: .6em;
+		padding-top: .4em;
+	}
+
+	
+}
+
+@media (max-width: 320px) {
+
+	.bonvoguecontainer h2{
+		padding-top: 2em;
+	}
+
+	.bvsearch-container .bv-search-box input{
+		width: 15em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+
+	.bvsearch-container .bv-search-box button{		
+		margin-left: 2.5em;
+	}
+
+	.bv-mid-container img{
+		padding-left: 2em;
+		width: 320px;		
+	}
+
+	#search-header .profile h5{
+		display: none;
+	}
+
+}
+
+/* For Nexus 7 Tab */
+
+/*@media only screen and (min-device-width : 601px) and (max-device-width :970px) {
+
+	.bvsearch-container{
+		width: 90%;
+		
+	}
+
+	.bv-mid-container img{
+		width: 250px;
+	}
+
+}

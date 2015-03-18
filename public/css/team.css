@@ -1,0 +1,19 @@
+.header{
+	background: url('../img/team/team.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+}
+
+.team-header{
+	width: auto;
+	text-align: center;
+	padding-bottom: 5em;
+}
+
+.team-header h1	{
+	font-family: 'Lato', sans-serif;
+	padding-top: 3em;
+	color: white;
+}

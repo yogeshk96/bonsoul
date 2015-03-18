@@ -1,0 +1,735 @@
+/*Font Import*/
+@font-face {
+  font-family: 'LearningCurve';
+  src: url('learningcurve.woff')  format('woff');
+}
+
+/*Font Import Done*/
+
+html, body{
+	width:100%;
+	overflow-x:hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+h1, h2, h3, h4, h5, p, li, a{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.bv-fullwidth{
+	  z-index: -999;
+	  min-height: 20em;
+	  min-width: 1024px;
+	  width: 100%;
+	  height: 50em;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+
+}
+
+.header{
+	background: url('../img/main-bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header .sub-header{
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding-top: 2em;
+}
+
+.logo{
+	width: 150px;
+}
+
+.headertags .main .menu-item{
+	display: inline-block;
+	padding-left: 2em;
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+}
+
+.headertags .menu-item:first-child{
+	margin-left: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	background-color: rgb(255, 76, 110);
+	border-radius: 2px;
+	-webkit-box-shadow: -1px 3px 12px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 3px 12px -2px rgba(0,0,0,0.75);
+	box-shadow: -1px 3px 12px -2px rgba(0,0,0,0.75);
+}
+
+
+.headertags .main .menu-item:hover ul{
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0;  	
+}
+
+.headertags .main .menu-item ul li:hover{
+	background-color:  rgb(255, 76, 110);
+}
+
+.headertags .main .menu-item ul{
+	display: none;
+}
+
+.headertags a{
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.mobile-menu{
+	display: none;
+}
+
+/**bonvogue Container**/
+
+.bonvoguecontainer {
+	
+	width: 100%;
+	height: 42em;
+	
+}
+
+.bonvoguecontainer h2{
+	text-align: center;
+	padding-top: 8em;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	font-size: 1.2em;
+}
+
+.bonvoguecontainer h2 span{
+	font-family: 'LearningCurve','Open Sans', sans-serif;
+}
+
+.bonvoguecontainer h3{
+	text-align: center;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	
+}
+
+.bvsearch-container{
+	width: 45em;
+	height: 4em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #13182e;
+	padding-left: .5em;
+}
+
+.service-search input{
+	width: 14em;
+	height: 2.5em;
+	margin-top: 10px;
+	background-color: #555555;
+	border-color: #555555;
+	color: white;
+	border-radius:2px;	
+}
+
+.venue-search input{
+	height: 2.5em;
+	margin-top: 10px;
+	background-color: #555555;
+	border-color: #555555;
+	color: white;
+	border-radius:2px;	
+}
+
+
+.bv-search-bottom h3{
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.prof-services, .curr-loc{
+	background-color: #13182e;
+	width: 14em;
+	height: 12em;
+	overflow: auto;	
+	margin-top: .3em;
+	position: absolute;
+	z-index: 999;
+	display: none;
+}
+
+
+
+.popular, .unpopular{
+	background-color: rgb(69, 92, 118);
+	text-align: center;
+}
+
+.autocomplete-suggestion{
+	background-color: #13182e;
+	color: white;
+	border-bottom:1px solid white;
+	padding: 4px;
+}
+
+.autocomplete-suggestion:last-child{
+	border-bottom:none;
+}
+
+
+
+.prof-services:after, 
+.prof-services:before,
+.curr-loc:after,
+.curr-loc:before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.prof-services:after,
+.curr-loc:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #13182e;
+    border-width: 6px;
+    left: 50%;
+    margin-left: 75px;
+}
+.prof-services:before,
+.curr-loc:before {
+    border-color: rgba(113, 158, 206, 0);
+    border-bottom-color: #13182e;
+    border-width: 6px;
+    left: 50%;
+    margin-left: 75px;
+}
+
+.prof-services ul, .curr-loc ul{
+	padding:0; margin:0;
+}
+
+.prof-services li, .curr-loc li{
+	padding-left: 5px;
+	font-size: 12px;
+	border-bottom: 1px solid #4C4949;
+}
+
+.prof-services li:last-child, .curr-loc li:last-child{
+	border-bottom: none;
+}
+
+.prof-services .sub-menu{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.prof-services .sub-menu p{
+	display: inline-block;	
+}
+
+.prof-services .sub-menu i{
+	/*padding-left: 5em;*/
+	padding: 0;
+}
+
+
+.prof-services li .sub{
+	display: none;
+}
+
+.prof-services li:hover, .curr-loc li:hover{
+	cursor: pointer;
+}
+
+.prof-services li:hover .sub{
+	display: block;
+	padding-left: 10px;
+	width: 95%;	
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+.prof-services li:hover .sub li:before{
+	content:" + ";
+}
+
+
+
+.bvsearch-container button{
+	width: 12.5em;
+	height: 2.5em;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #4bac93;
+	color: white;
+}
+
+.bvsearch-container button:hover{
+	color: white;
+	background-color: #3b8370;
+}
+
+.bv-input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+}
+
+.bonvogue-nav-links{
+	width: 50em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bonvogue-nav-links ul li{
+	display: inline-block;
+	font-size: 12px;
+	text-decoration: underline;
+	padding-left: 3px;
+}
+
+/**bonvogue Container Ends Here**/
+
+/*BV Search COntainer*/
+
+.bv-mid-container{
+	background-color: #2f3f58;
+}
+
+.bv-mid-container img{
+	width: 35em;
+	padding-left: 5em;
+}
+
+.bv-mid-container-text {	
+	color: white;
+	padding-top: 1em;
+	padding-left: 20em;
+
+}
+
+.bv-mid-container-text .bullet-text{
+	color: black;
+}
+
+.bv-mid-container-text .fa-circle{
+	color: rgb(186, 182, 182);
+}
+
+
+/*BV Search COntainer Ends Here*/
+
+/* Top Sections starts here */
+
+.top-sections{
+	background-color: #F3F4EE;
+	padding-bottom: 5em;
+}
+
+.top-sections .recommend-heading .separator {
+	margin-top: 0;
+	padding-top: 1em;
+	color: #989898;
+}
+
+.top-sections .recommend-heading .separator  p{	
+	color: #989898;
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.top-sections .recommend-heading .separator::before, .top-sections .recommend-heading .separator::after {
+    border-bottom: 1px solid #989898;
+
+}
+
+.top-sections .top-card{
+	margin-top: 8em;
+	margin-left: 2em;
+	width: 30%;
+	background-color: white;
+	-webkit-box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+	-moz-box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+	box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+
+}
+
+.top-sections .section-heading{
+	text-align: center;
+}
+
+.top-sections .top-card .section-item{
+	margin-top: 0.7em;
+}
+
+
+
+.btm-txt{
+	text-align: center;
+	color: black;
+}
+
+.btm-txt a{
+	color: black;
+	text-decoration: none;
+}
+
+.top-sections .hour-card{
+	margin-top: .5em;
+-webkit-box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+-moz-box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
+}
+
+
+
+/* Top sections ends here */
+
+
+
+
+.wrapper {
+    
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -64px;    
+}
+.push {
+    height: 63px;
+}
+/* not required for sticky footer; just pushes hero down a bit */
+.wrapper > .container {
+    padding-top: 60px;
+}
+
+/** Footer **/
+
+.separator {
+    display: flex;
+	align-items: center;
+	text-align: center;
+	width: 60em;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.separator p{
+	padding-top: 0.5em;
+	color: white;
+}
+
+.separator::before, .separator::after {
+    content: '';
+
+    flex: 1;
+    border-bottom: 1px solid white;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+
+footer{
+	margin: 0;
+	width: 100%;
+
+	background-color: #2f3f58;
+	background-size: 100% 120%;
+	
+	padding: 17px 0 2px 0;
+	
+	
+}
+
+footer h3, li{
+	color: white;	
+}
+
+.inner-footercontainer{	
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inner-footercontainer h3{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.inner-footercontainer ul, li {
+	text-decoration: none;
+	list-style-type: none;
+	padding: 0;
+	line-height: 2.2em;
+}
+
+
+
+.inner-footercontainer .rvan img{
+	width: 150px;
+	height: 40px;
+	display: block;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.inner-footercontainer .rvan p{
+	color: white;
+}
+
+.rvan h5{
+	text-align: center;
+	color: white;
+}
+
+.social-logo img{
+	width: 50px;
+	height: 50px;
+	
+}
+
+.s-logo{
+	width: 50px;
+	padding-left: 8px;
+}
+
+.inner-footercontainer-2{
+		width:90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inner-footercontainer-2 h3, li{
+	text-transform: uppercase;
+	font-size: 10px;
+	color: white;
+}
+
+.footercontainer .company h5{
+	margin-top: 1em;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+
+
+
+.inner-footercontainer-2 ul,li{
+		text-decoration: none;
+		list-style-type: none;
+		padding: 0;
+		line-height: 2.2em;
+
+        list-style-position:inside;
+        margin:0;
+        
+}
+
+
+/** End of footer **/
+
+/** Scrollbar **/
+
+::-webkit-scrollbar {
+    width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #7BCBB7;
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent);
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #aaa;
+}
+
+/** End of Scroll bar **/
+
+.btn-primary{
+	background-color: #7BCBB7;
+	border-color: #7BCBB7;
+}
+
+
+
+
+
+@media (max-width: 320px) {
+	.bonvoguecontainer{
+		height: 44em;
+		background-size: 100% 100%;
+	}
+
+	.bonvoguecontainer h2{
+		font-size: 2.3em;
+	}
+
+	.bonvoguecontainer h3{
+		font-size: 1em;
+	}	
+}
+
+/* responsive footer fix by Aalaap Ghag */
+@media (max-width: 1000px) {
+    body {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+   .logo img{
+	width:120px;
+	height:40px;
+	}
+
+	.mobileMenuBtn{
+		display: inherit;
+		
+	}
+
+	.header-wrapper{
+		background-image: none;
+		height: auto;
+	}
+
+    .bonsoulNavBar{
+    	width: 80%;
+    	margin-left: 8%;
+    }
+
+    .navcontainer{    	
+    	display: none;
+    }
+
+    .txt-4 h2{
+    	color: black;
+    	font-size: 0.85em;
+    }
+
+    .bonvoguetags{ display: none;}
+
+    .caption-container{
+		margin-top: 3%;
+		margin-left: 20%;
+		background-color: #7FC7B5;
+		width: 180px;
+		height:300px;
+		text-align: center;
+	}
+
+	.bonvoguecontainer{
+		height: 38em;
+		background-size: 100% 100%;
+	}
+
+	.selectbox{
+		width: 15em;		
+	}
+
+	.selectbox select{
+		background-position: 11em 1em;
+	}
+
+	.therapist-img{
+		
+	}
+
+
+	.wrapper {
+    
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -35px; 
+	}
+
+	.push {
+	    height: 64px;
+	}
+
+	 footer, .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+	footer{
+		width:100%;
+		margin-left: auto;
+		margin-right: auto;	
+	    padding: 0;
+
+	}
+
+	footer h4{
+		font-size: 8px;
+		font-weight: 100;
+		padding-left: 20%;
+	}
+
+	.footercontainer{
+		margin: 0;
+		padding: 0;	
+	}
+
+	.footercontainer ul
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+   .footercontainer ul li a
+	{
+
+		font-size: 8px;
+		text-decoration: none;
+	}
+
+	.footercontainer ul li img{
+		width: 8em;
+		height: 4em;
+	}
+
+	 .footercontainer ul li
+	{
+		margin: 0;
+		padding: 0;
+		font-size: 8px;
+		text-decoration: none;
+	}
+}
