@@ -6,4 +6,5 @@ class MenuCategory extends Model {
 
 	protected $table = 'menu_category';
 
+	
 }

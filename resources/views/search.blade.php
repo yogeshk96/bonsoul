@@ -5,12 +5,12 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
   <!-- Include jQuery.mmenu .css files -->
-  <link type="text/css" href="js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+  <link type="text/css" href="/bonsoul/public/js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/bonsoul.css" />
-  <link rel="stylesheet" type="text/css" href="css/search-result.css" />
-  <link rel="stylesheet" type="text/css" href="css/mobile.css" />
+  <link rel="stylesheet" type="text/css" href="/bonsoul/public/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/bonsoul/public/css/bonsoul.css" />
+  <link rel="stylesheet" type="text/css" href="/bonsoul/public/css/search-result.css" />
+  <link rel="stylesheet" type="text/css" href="/bonsoul/public/css/mobile.css" />
 
 
   
@@ -18,9 +18,9 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-  <link href="css/font-awesome.min.css" rel="stylesheet" type='text/css'>
-  <script src="js/sweet-alert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
+  <link href="/bonsoul/public/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+  <script src="/bonsoul/public/js/sweet-alert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/bonsoul/public/css/sweet-alert.css">
   <title>BonSoul</title>
 
 </head>
@@ -37,7 +37,7 @@
         <div class="mobile-menu col-xs-2"> <i class="fa fa-bars"></i>
         </div>
         <div class="col-xs-4 col-md-3">
-          <img class="searchlogo" src="img/Bonsoul-Logo.png" width="50" />
+          <img class="searchlogo" src="/bonsoul/public/img/Bonsoul-Logo.png" width="50" />
         </div>
 
         <div class="col-xs-6 col-md-6 search-box">
@@ -117,7 +117,7 @@
 
         <div class="col-xs-6 col-md-3 profile">
 
-          <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="img/user.png">
+          <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="/bonsoul/public/img/user.png">
 
           <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
             <li>
@@ -472,16 +472,16 @@
         <div class="row social-logo">
           <div class="col-md-1 col-xs-1 s-logo">
             <a href="https://www.facebook.com/bonsoulindia" target="_BLANK">
-              <img src="img/footer-fb.png" alt="Bonsoul Facebook Page" />
+              <img src="/bonsoul/public/img/footer-fb.png" alt="Bonsoul Facebook Page" />
             </a>
 
-            <img src="img/footer-insta.png" alt="Bonsoul Instagram Page" />
+            <img src="/bonsoul/public/img/footer-insta.png" alt="Bonsoul Instagram Page" />
           </div>
 
           <div class="col-md-1 col-xs-1 s-logo">
-            <img src="img/footer-twitter.png" alt="Bonsoul Twitter Page" />
+            <img src="/bonsoul/public/img/footer-twitter.png" alt="Bonsoul Twitter Page" />
 
-            <img src="img/footer-pinterest.png" alt="Bonsoul Pinterest Page" />
+            <img src="/bonsoul/public/img/footer-pinterest.png" alt="Bonsoul Pinterest Page" />
           </div>
         </div>
       </div>
@@ -629,13 +629,13 @@
 
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/mmenu/jquery.mmenu.min.all.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/smooth-scroll.min.js"></script>
-<script src="js/bonvogue/bv-home.js"></script>
-<script src="js/bonvogue/bv-search.js"></script>
-<script src="js/jquery-autocomplete/jquery.autocomplete.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/bonsoul/public/js/mmenu/jquery.mmenu.min.all.js"></script>
+<script src="/bonsoul/public/js/bootstrap.min.js"></script>
+<script src="/bonsoul/public/js/smooth-scroll.min.js"></script>
+<script src="/bonsoul/public/js/bonvogue/bv-home.js"></script>
+<script src="/bonsoul/public/js/bonvogue/bv-search.js"></script>
+<script src="/bonsoul/public/js/jquery-autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="/bonsoul/public/js/jquery-ui.min.js"></script>
 <script>
 
     // $('#service-checkbox').click(function(){      

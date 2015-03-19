@@ -13,7 +13,4 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::get('/search/{city}/{treatment}', 'SearchController@seachtreatment');

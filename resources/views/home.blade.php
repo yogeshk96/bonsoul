@@ -1,4 +1,4 @@
-  @extends('master')
+  @extends('homeheader')
   <!-- <h3>INDIA'S FIRST WELLNESS PLATFORM</h3>
     -->
     @section('content')
@@ -34,12 +34,11 @@
           <div class="curr-loc">
             <ul>
               <li class="popular">Near Me</li>
-              <li>Banjara Hills</li>
-              <li>Jubilee Hills</li>
-              <li>Madhapur</li>
-              <li>Gachibowli</li>
-              <li>Film Nagar</li>
-              <li>Hitech City</li>
+              @foreach($localities as $locality)
+              @if ($locality->cityId == 1)
+              <li>{{$locality->name}}</li>
+              @endif
+              @endforeach
             </ul>
           </div>
         </div>
@@ -167,6 +166,7 @@
 
     <div class="section-list">
 
+      @foreach($toptreatarr as $toptreat)
       <div class="row section-item">
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -174,63 +174,12 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <h3>FACIAL</h3>
-          <span>available in 574 salons</span>
+          <h3>{{$toptreat['name']}}</h3>
+         <!-- <span>available in 574 salons</span> -->
         </div>
 
       </div>
-
-      <div class="row section-item">
-
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-        </div>
-
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <h3>FACIAL</h3>
-          <span>available in 574 salons</span>
-        </div>
-
-      </div>
-
-      <div class="row section-item">
-
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-        </div>
-
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <h3>FACIAL</h3>
-          <span>available in 574 salons</span>
-        </div>
-
-      </div>
-
-      <div class="row section-item">
-
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-        </div>
-
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <h3>FACIAL</h3>
-          <span>available in 574 salons</span>
-        </div>
-
-      </div>
-
-      <div class="row section-item">
-
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-        </div>
-
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <h3>FACIAL</h3>
-          <span>available in 574 salons</span>
-        </div>
-
-      </div>
+      @endforeach
 
     </div>
 
@@ -255,6 +204,7 @@
 
   <div class="section-list">
 
+    @foreach($randomvenues as $randomvenue)
     <div class="row section-item">
 
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -262,63 +212,14 @@
       </div>
 
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h3>FACIAL</h3>
-        <span>available in 574 salons</span>
+        <h3>{{$randomvenue->name}}</h3>
+       <!-- <span>available in 574 salons</span> -->
       </div>
 
     </div>
+    @endforeach
 
-    <div class="row section-item">
-
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-      </div>
-
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h3>FACIAL</h3>
-        <span>available in 574 salons</span>
-      </div>
-
-    </div>
-
-    <div class="row section-item">
-
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-      </div>
-
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h3>FACIAL</h3>
-        <span>available in 574 salons</span>
-      </div>
-
-    </div>
-
-    <div class="row section-item">
-
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-      </div>
-
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h3>FACIAL</h3>
-        <span>available in 574 salons</span>
-      </div>
-
-    </div>
-
-    <div class="row section-item">
-
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-      </div>
-
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h3>FACIAL</h3>
-        <span>available in 574 salons</span>
-      </div>
-
-    </div>
+    
 
   </div>
 
@@ -343,18 +244,7 @@
 
 <div class="section-list">
 
-  <div class="row section-item">
-
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-    </div>
-
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h3>FACIAL</h3>
-      <span>available in 574 salons</span>
-    </div>
-
-  </div>
+@foreach($topvenues as $topvenue)
 
   <div class="row section-item">
 
@@ -363,50 +253,13 @@
     </div>
 
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h3>FACIAL</h3>
-      <span>available in 574 salons</span>
+      <h3>{{$topvenue->name}}</h3>
+      <!--<span>available in 574 salons</span>-->
     </div>
 
   </div>
 
-  <div class="row section-item">
-
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-    </div>
-
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h3>FACIAL</h3>
-      <span>available in 574 salons</span>
-    </div>
-
-  </div>
-
-  <div class="row section-item">
-
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-    </div>
-
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h3>FACIAL</h3>
-      <span>available in 574 salons</span>
-    </div>
-
-  </div>
-
-  <div class="row section-item">
-
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <img src="img/AZBiltmorePedicure.jpg" class="img-responsive" />
-    </div>
-
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h3>FACIAL</h3>
-      <span>available in 574 salons</span>
-    </div>
-
-  </div>
+@endforeach
 
 </div>
 
