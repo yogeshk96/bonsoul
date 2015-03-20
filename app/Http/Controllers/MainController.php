@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use View;
+use App\Venue;
 class MainController extends Controller {
 
 	
@@ -21,10 +22,22 @@ class MainController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($city, $venueid,$slug)
 	{
 
-		return view("venue");
+		$venuedetail = Venue::where('id','=',$venueid)->first();
+
+		$venuepics = json_decode($venuedetail->photos);
+
+		if(!empty($venuepics)) {
+
+			$venuepic = $venuepics[0]->original;
+		} else {
+
+			$venuepic = "";
+		}
+
+		return view("venue", compact("venuedetail", "venuepic"));
 	}
 
 }
