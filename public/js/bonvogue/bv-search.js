@@ -54,7 +54,8 @@ $(function(){
 			thisurl = explodeurl[0];
 		} 
 
-		var location = $("#inputLocation").val();
+		var location = $(".resultscontainer").find(".inputLocation").val();
+		var services = "All";
 
 		if(!$("#allservice").prop("checked")) {
 
@@ -74,7 +75,13 @@ $(function(){
 
 			services = "All";
 		}
+		if(services == "") {
 
+			services = "All";
+		}
+
+		var loc = thisurl+"/filter/"+location+"/"+services;
+		window.location.href=loc;
 	});
 
 	

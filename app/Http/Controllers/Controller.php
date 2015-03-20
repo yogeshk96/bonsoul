@@ -4,8 +4,20 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
+use View;
+
 abstract class Controller extends BaseController {
 
 	use DispatchesCommands, ValidatesRequests;
 
+	public function __construct()
+  	{
+	    // Fetch the User object
+	    $locUrl = "/bonsoul/public";
+	 
+	    // Sharing is caring
+	    View::share('locUrl', $locUrl);
+  	}
+
+	
 }

@@ -15,6 +15,6 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/search/{city}/{treatment}', 'SearchController@seachtreatment');
 
-Route::get('/search/{city}/{treatment}/filter/{location}/{service}/{sortby}', 'SearchController@filtertreatment');
+Route::get('/search/{city}/{treatment}/filter/{location}/{service}', 'SearchController@filtertreatment');
 
 Route::get('/{city}/{venueid}/{slug}', 'MainController@index');

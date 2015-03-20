@@ -56,7 +56,7 @@
       <div class="filter">
         <i class="fa fa-map-marker"></i>
         <label>Location</label>
-        <select name="Location" id="inputLocation" class="form-control" >
+        <select name="Location" id="inputLocation" class="form-control inputLocation" >
         <option value="All">All</option>
           @foreach($localities as $locality)
             @if ($locality->cityId == 1)
@@ -81,14 +81,14 @@
         @endforeach
       </div>
 
-      <div class="filter">
+      <!-- <div class="filter">
         <i class="fa fa-sort-amount-asc"></i>
         <label>Sort By</label>
         <select name="Location" id="inputSortBy" class="form-control" >
           <option value="popularity">Popularity</option>
           
         </select>
-      </div>
+      </div> -->
 
       <div class="filter">
         <button type="button" class="btn btn-default submitfilter">Submit</button>
@@ -144,11 +144,13 @@
           @endforeach
           -->
 
-            <div class="show-menu" style="cursor:pointer;">
+            <a href="/bonsoul/public/{{$city}}/{{$venue['id']}}/{{$venuenamearr[$venue['id']]}}" style="text-decoration:none;">
+            <div class="show-menu">
 
               <span class="label label-default">VIEW VENUE</span>
 
             </div>
+            </a>
 
           </div>
 
@@ -157,6 +159,12 @@
       </div>
 
       @endforeach
+
+      @if(count($venueArr) == 0)
+
+        <h3>No results found.</h3>
+
+      @endif
 
 
     </div>
@@ -178,9 +186,13 @@
       <div class="filter">
         <i class="fa fa-map-marker"></i>
         <label>Location</label>
-        <select name="Location" id="inputLocation" class="form-control" >
-          <option value="Banjara Hills">Banjara Hills</option>
-          <option value="Jubilee Hills">Jubilee Hills</option>
+        <select name="Location" class="form-control" >
+          <option value="All">All</option>
+          @foreach($localities as $locality)
+            @if ($locality->cityId == 1)
+            <option value="{{$locality->name}}">{{$locality->name}}</option>
+            @endif
+          @endforeach
         </select>
       </div>
 
@@ -189,37 +201,19 @@
         <label>Service</label>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="All" id="service-checkbox">All</label>
+            <input type="checkbox" value="All" class="service_checkbox" id="allservice">All
+          </label>
         </div>
-
+        @foreach($relatedtreatments as $relatedtreatment)
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="1" id="service-checkbox">Deep Tissue Massage</label>
+            <input type="checkbox" value="{{$relatedtreatment->name}}" class="service_checkbox">{{$relatedtreatment->name}}</label>
         </div>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="2" id="service-checkbox">Thai Massage</label>
-        </div>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="3" id="service-checkbox">Ayurvedi Massage</label>
-        </div>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="4" id="service-checkbox">Balinese Massage</label>
-        </div>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="5" id="service-checkbox">Head Massage</label>
-        </div>
+        @endforeach
 
       </div>
 
-      <div class="filter">
+      <!--<div class="filter">
         <i class="fa fa-sort-amount-asc"></i>
         <label>Sort By</label>
         <select name="Location" id="inputLocation" class="form-control" >
@@ -227,10 +221,10 @@
           <option value="Jubilee Hills">Cost - High to Low</option>
           <option value="Jubilee Hills">Cost - Low to High</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="filter">
-        <button type="button" class="btn btn-default">Submit</button>
+        <button type="button" class="btn btn-default submitfilter">Submit</button>
         <button type="button" class="btn btn-default">Reset</button>
       </div>
 

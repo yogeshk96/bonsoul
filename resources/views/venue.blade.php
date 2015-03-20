@@ -4,36 +4,37 @@
     <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bonvogue.css" />
-        <link rel="stylesheet" type="text/css" href="css/search-result.css" />
-        <link rel="stylesheet" type="text/css" href="css/profile.css" />
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bonvogue.css" />
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/search-result.css" />
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/profile.css" />
 
         <!-- Gallery Slider -->
 
-        <link rel="stylesheet" type="text/css" href="js/slickjs/slick.css" />
-        <link rel="stylesheet" type="text/css" href="js/slickjs/slick-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/slickjs/slick.css" />
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/slickjs/slick-theme.css"/>
 
         <!-- Gallery Plugin CSS -->
-        <link rel="stylesheet" href="js/bootstrap-gallery/blueimp-gallery.min.css">
-        <link rel="stylesheet" type="text/css" href="js/bootstrap-gallery/bootstrap-image-gallery.css"/>
+        <link rel="stylesheet" href="{{$locUrl}}/js/bootstrap-gallery/blueimp-gallery.min.css">
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/bootstrap-gallery/bootstrap-image-gallery.css"/>
 
         <!-- Date Picker CSS -->
-        <link rel="stylesheet" type="text/css" href="js/datetimepicker/bootstrap-datetimepicker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/datetimepicker/bootstrap-datetimepicker.min.css"/>
 
         <!-- Fonts  -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link href="css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+        <link href="{{$locUrl}}/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
 
 
-        <script src="js/sweet-alert.min.js"></script> 
-        <link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
+        <script src="{{$locUrl}}/js/sweet-alert.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/sweet-alert.css">
     <title>BonSoul</title>
     
   </head>
 <body>
+
     <!-- Image Gallery lightbox -->
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
@@ -80,7 +81,7 @@
   <div class="wrapper">
       <div class="row">
         <div class="col-xs-3 col-md-3">
-           <img class="searchlogo" src="img/Bonsoul-Logo.png" width="50" />
+           <img class="searchlogo" src="{{$locUrl}}/img/Bonsoul-Logo.png" width="50" />
         </div>
 
         <div class="col-xs-6 col-md-5 search-box">
@@ -98,7 +99,7 @@
         <div class="col-xs-3 col-md-3 profile">
             <!-- <a class="dropdown-toggle pull-right" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i></a> -->
 
-            <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="img/user.png">
+            <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="{{$locUrl}}/img/user.png">
 
              <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
               <li><a tabindex="-1" href="#">My Appointments</a></li>
@@ -123,7 +124,7 @@
   <div class="row">
 
     <div class="col-md-3">
-      <img src="img/user.jpg" width="250">
+      <img src="{{$locUrl}}/img/user.jpg" width="250">
     </div>
 
     <div class="col-md-6 details">    
@@ -155,8 +156,8 @@ Professional Hair & Makeup</p>
      
 
       <div class="portfo-item">
-        <a href="img/AZBiltmorePedicure.jpg" title="Banana" data-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry." data-fav="34" data-comments="52" data-gallery>
-            <img src="img/AZBiltmorePedicure.jpg" alt="Banana">
+        <a href="{{$locUrl}}/img/AZBiltmorePedicure.jpg" title="Banana" data-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry." data-fav="34" data-comments="52" data-gallery>
+            <img src="{{$locUrl}}/img/AZBiltmorePedicure.jpg" alt="Banana">
         </a>         
 
           <ul class="list-inline fav-comment-buttons">
@@ -169,8 +170,8 @@ Professional Hair & Makeup</p>
       </div>
 
       <div class="portfo-item">
-          <a href="img/bg.jpg" title="Banana" data-gallery>
-            <img src="img/bg.jpg" alt="Banana">
+          <a href="{{$locUrl}}/img/bg.jpg" title="Banana" data-gallery>
+            <img src="{{$locUrl}}/img/bg.jpg" alt="Banana">
         </a>
 
           <ul class="list-inline fav-comment-buttons">
@@ -201,8 +202,8 @@ Professional Hair & Makeup</p>
       </div>
 
       <div class="portfo-item">
-          <a href="img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
-            <img src="img/AZBiltmorePedicure.jpg" alt="Banana">
+          <a href="{{$locUrl}}/img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
+            <img src="{{$locUrl}}/img/AZBiltmorePedicure.jpg" alt="Banana">
         </a>
 
           <ul class="list-inline fav-comment-buttons">
@@ -216,8 +217,8 @@ Professional Hair & Makeup</p>
       </div>
 
       <div class="portfo-item">
-          <a href="img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
-            <img src="img/AZBiltmorePedicure.jpg" alt="Banana">
+          <a href="{{$locUrl}}/img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
+            <img src="{{$locUrl}}/img/AZBiltmorePedicure.jpg" alt="Banana">
         </a>
 
           <ul class="list-inline fav-comment-buttons">
@@ -231,8 +232,8 @@ Professional Hair & Makeup</p>
       </div>
 
       <div class="portfo-item">
-          <a href="img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
-            <img src="img/AZBiltmorePedicure.jpg" alt="Banana">
+          <a href="{{$locUrl}}/img/AZBiltmorePedicure.jpg" title="Banana" data-gallery>
+            <img src="{{$locUrl}}/img/AZBiltmorePedicure.jpg" alt="Banana">
         </a>
 
           <ul class="list-inline fav-comment-buttons">
@@ -620,15 +621,15 @@ Professional Hair & Makeup</p>
                   <h3>Follow Us</h3>
                   <div class="row social-logo">
                         <div class="col-md-1 col-xs-1 s-logo">
-                           <a href="https://www.facebook.com/bonsoulindia" target="_BLANK"><img src="img/footer-fb.png" alt="Bonsoul Facebook Page" /></a>
+                           <a href="https://www.facebook.com/bonsoulindia" target="_BLANK"><img src="{{$locUrl}}/img/footer-fb.png" alt="Bonsoul Facebook Page" /></a>
 
-                            <img src="img/footer-insta.png" alt="Bonsoul Instagram Page" />
+                            <img src="{{$locUrl}}/img/footer-insta.png" alt="Bonsoul Instagram Page" />
                         </div>
 
                         <div class="col-md-1 col-xs-1 s-logo">
-                            <img src="img/footer-twitter.png" alt="Bonsoul Twitter Page" />
+                            <img src="{{$locUrl}}/img/footer-twitter.png" alt="Bonsoul Twitter Page" />
 
-                            <img src="img/footer-pinterest.png" alt="Bonsoul Pinterest Page" />
+                            <img src="{{$locUrl}}/img/footer-pinterest.png" alt="Bonsoul Pinterest Page" />
                         </div>
                   </div>
               </div>
@@ -816,19 +817,19 @@ Professional Hair & Makeup</p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>   
-   <script src="js/bootstrap-gallery/jquery.blueimp-gallery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/smooth-scroll.min.js"></script>
+   <script src="{{$locUrl}}/js/bootstrap-gallery/jquery.blueimp-gallery.min.js"></script>
+  <script src="{{$locUrl}}/js/bootstrap.min.js"></script>
+  <script src="{{$locUrl}}/js/smooth-scroll.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
   
-  <script type="text/javascript" src="js/slickjs/slick.min.js"></script>
-  <script type="text/javascript" src="js/responsivetabs/responsive-tabs.js"></script>
-  <script type="text/javascript" src="js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript" src="js/bonvogue/bv-profile.js"></script>
+  <script type="text/javascript" src="{{$locUrl}}/js/slickjs/slick.min.js"></script>
+  <script type="text/javascript" src="{{$locUrl}}/js/responsivetabs/responsive-tabs.js"></script>
+  <script type="text/javascript" src="{{$locUrl}}/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="{{$locUrl}}/js/bonvogue/bv-profile.js"></script>
 
   <!-- Gallery Plugin  -->
  
-  <script src="js/bootstrap-gallery/bootstrap-image-gallery.min.js"></script>
+  <script src="{{$locUrl}}/js/bootstrap-gallery/bootstrap-image-gallery.min.js"></script>
 
   <script>
 
