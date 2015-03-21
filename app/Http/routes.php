@@ -13,8 +13,12 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/search/{city}/{treatment}', 'SearchController@seachtreatment');
+Route::get('/feature', 'HomeController@feature');
 
-Route::get('/search/{city}/{treatment}/filter/{location}/{service}', 'SearchController@filtertreatment');
+Route::get('/profile/{userid}', 'HomeController@profile');
+
+Route::get('/search/{city}/{loca}/{treatment}', 'SearchController@seachtreatment');
+
+Route::get('/search/{city}/{loca}/{treatment}/filter/{location}/{service}', 'SearchController@filtertreatment');
 
 Route::get('/{city}/{venueid}/{slug}', 'MainController@index');

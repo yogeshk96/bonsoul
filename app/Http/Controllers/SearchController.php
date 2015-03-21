@@ -28,10 +28,10 @@ class SearchController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function seachtreatment($city, $treatment)
+	public function seachtreatment($city,$loca, $treatment)
 	{
 
-		$thiscity = City::where('name', '=', $city)->first();
+		$thislocality = Locality::where('name', '=', $loca)->first();
 
 		$thiscategory = MenuCategory::where('name', '=', $treatment)->first();
 		if($thiscategory) {
@@ -55,7 +55,7 @@ class SearchController extends Controller {
 
         for($j=0;$j<count($getmenu); $j++) {
 
-        	$venuedetail = Venue::where('id', '=', $getmenu[$j]->venueId)->where('cityId', '=', $thiscity->id)->where('public','=', 1)->first();
+        	$venuedetail = Venue::where('id', '=', $getmenu[$j]->venueId)->where('localityId', '=', $thislocality->id)->where('public','=', 1)->first();
         	if($venuedetail) {
 
         		$explodename = explode(" ", $venuedetail->name);
@@ -92,7 +92,7 @@ class SearchController extends Controller {
 
 	}
 
-	public function filtertreatment($city, $treatment, $location, $service)
+	public function filtertreatment($city, $loca, $treatment, $location, $service)
 	{
 
 		$services = explode(",", $service);

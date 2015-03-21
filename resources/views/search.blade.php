@@ -1,42 +1,6 @@
-@extends('master')
+@extends('app')
 
-@section('content')
-<nav id="bonsoul-menu">
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">Location</a>
-        <ul>
-          <li>
-            <a href="#">Hyderabad</a>
-          </li>
-          <li>
-            <a href="#">Bengaluru</a>
-          </li>
-          <li>
-            <a href="#">Mumbai</a>
-          </li>
-          <li>
-            <a href="#">Pune</a>
-          </li>
-          <li>
-            <a href="#">Delhi</a>
-          </li>
-          <li>
-            <a href="#">Noida</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Login</a>
-      </li>
-      <li>
-        <a href="#">Sign Up</a>
-      </li>
-    </ul>
-  </nav>
+@section('app-content')
 
 
 <div class="resultscontainer">
@@ -104,7 +68,7 @@
       <div class="stylist-result row">
 
         <div class="col-md-5 venue-img">
-          <img src="http://d2rmoau0tbh3pz.cloudfront.net/{{$venuepicarr[$venue['id']]}}" class="img-responsive"></div>
+          <img src="{{$cdnUrl}}{{$venuepicarr[$venue['id']]}}" class="img-responsive"></div>
 
         <div class="col-md-7 col-xs-12">
           <div class="row">
@@ -144,7 +108,7 @@
           @endforeach
           -->
 
-            <a href="/bonsoul/public/{{$city}}/{{$venue['id']}}/{{$venuenamearr[$venue['id']]}}" style="text-decoration:none;">
+            <a href="{{$locUrl}}/{{$city}}/{{$venue['id']}}/{{$venuenamearr[$venue['id']]}}" style="text-decoration:none;">
             <div class="show-menu">
 
               <span class="label label-default">VIEW VENUE</span>

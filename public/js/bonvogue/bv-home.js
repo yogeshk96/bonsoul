@@ -71,13 +71,11 @@ $(function () {
 	    }
 
 	    services.click(function(){
-			$('.bv-search-prof-serv').val($(this).text());
-			$('.prof-services').hide();			
+			$('.bv-search-prof-serv').val($(this).text());			
 		});
 
 		location.click(function(){
 			$('.bv-loc-input').val($(this).text());
-			$('.curr-loc').hide();
 		});
 
 	});

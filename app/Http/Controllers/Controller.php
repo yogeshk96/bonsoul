@@ -14,9 +14,12 @@ abstract class Controller extends BaseController {
   	{
 	    // Fetch the User object
 	    $locUrl = "/bonsoul/public";
+
+	    $cdnUrl = "http://d2rmoau0tbh3pz.cloudfront.net";
 	 
 	    // Sharing is caring
 	    View::share('locUrl', $locUrl);
+	    View::share('cdnUrl', $cdnUrl);
   	}
 
 	

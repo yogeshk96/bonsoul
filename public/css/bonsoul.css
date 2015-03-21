@@ -169,7 +169,6 @@ h1, h2, h3, h4, h5, p, li, a{
 	margin-top: .3em;
 	position: absolute;
 	z-index: 999;
-	display: none;
 }
 
 
@@ -458,13 +457,17 @@ box-shadow: -12px 42px 87px -23px rgba(92,92,92,1);
 footer{
 	margin: 0;
 	width: 100%;
-
 	background-color: #2f3f58;
-	background-size: 100% 120%;
-	
+	background-size: 100% 120%;	
 	padding: 17px 0 2px 0;
-	
-	
+}
+
+footer li a{
+	color: white;
+}
+
+footer li a:hover{
+	color: white;
 }
 
 footer h3, li{

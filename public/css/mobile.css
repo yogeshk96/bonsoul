@@ -147,7 +147,12 @@ box-shadow: 1px 25px 105px -9px rgba(0,0,0,0.75);
 		  height: 90%;
 		  z-index: 2;
 		  background: #ffffff;
-}
+	}
+
+	.portfo-item img{
+		width: 100%;
+		height: auto;
+	}
 
 
 

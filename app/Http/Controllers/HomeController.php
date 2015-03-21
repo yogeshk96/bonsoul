@@ -79,4 +79,14 @@ class HomeController extends Controller {
 
 	}
 
+	public function feature() {
+
+		return view('features');
+	}
+
+	public function profile() {
+
+		return view('profile');
+	}
+
 }

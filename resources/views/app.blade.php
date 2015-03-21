@@ -1,62 +1,502 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bootstrap.min.css" />
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+  <!-- Include jQuery.mmenu .css files -->
+  <link type="text/css" href="{{$locUrl}}/js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
 
-	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bonsoul.css" />
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/venue.css" />
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/search-result.css" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/mobile.css" />
+
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/star-rating.css">
+
+  <!-- Gallery Slider -->
+
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/slickjs/slick.css" />
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/slickjs/slick-theme.css"/>
+
+  <!-- Gallery Plugin CSS -->
+  <link rel="stylesheet" href="{{$locUrl}}/js/bootstrap-gallery/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/bootstrap-gallery/bootstrap-image-gallery.css"/>
+
+  <!-- Date Picker CSS -->
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/js/datetimepicker/bootstrap-datetimepicker.min.css"/>
+
+  <!-- Fonts  -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="{{$locUrl}}/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+
+  <script src="{{$locUrl}}/js/sweet-alert.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/sweet-alert.css">
+  <title>BonSoul</title>
+
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
-			</div>
+  <!-- Image Gallery lightbox -->
+  <div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body next"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left prev"> <i class="glyphicon glyphicon-chevron-left"></i>
+                  Previous
+                </button>
+                <button type="button" class="btn btn-primary next">
+                  Next <i class="glyphicon glyphicon-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <!--   <div class="col-md-4 comments">
+            <a class="close">×</a>
+            <p class="description"></p>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
-				</ul>
+<div class="loader"></div>
 
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+<div id="search-header">
+  <div class="wrapper">
+    <div class="row">
+      <div class="mobile-menu col-xs-2">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="col-xs-4 col-md-3">
+        <img class="searchlogo" src="{{$locUrl}}/img/Bonsoul-Logo.png" width="50" />
+      </div>
 
-	@yield('content')
+      <div class="col-xs-6 col-md-6 search-box">
+        <div class="row">
 
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+           <div class="col-xs-6 col-md-6">
+            <input type="email" class="form-control bv-search-prof-serv" id="autocomplete-prof" placeholder="Search for professional/service">
+            <div class="prof-services">
+              <ul>
+                <li>All Treatments</li>
+
+                <li>Body</li>
+
+                <li>Classes</li>
+
+                <li>Face</li>
+
+                <li>Hair</li>
+
+                <li>Hair Removal</li>
+
+                <li>Massage</li>
+
+                <li>Membership</li>
+
+                <li>Nails</li>
+
+                <li>Skin</li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-4 col-md-4">
+            <input type="text" name="location" id="inputLocation" class="form-control selectvenue bv-loc-input" placeholder="Location">
+            <div class="curr-loc">
+              <ul>
+                <li>Hyderabad</li>
+                <li>Bangalore</li>
+                <li>Delhi</li>
+                <li>Mumbai</li>
+                <li>Ahmedabad</li>
+              </ul>
+            </div>
+          </div>
+         
+
+          <div class="col-xs-2 col-md-2">
+            <button type="button" class="btn btn-default">Search</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-xs-6 col-md-3 profile">
+
+        <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="{{$locUrl}}/img/user.png">
+
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
+          <li>
+            <a tabindex="-1" href="#">My Appointments</a>
+          </li>
+          <li>
+            <a tabindex="-1" href="#">Settings</a>
+          </li>
+          <!-- <li>
+          <a tabindex="-1" href="#"></a>
+        </li>
+        -->
+        <li class="divider"></li>
+        <li>
+          <a tabindex="-1" href="#">Logout</a>
+        </li>
+      </ul>
+
+      <h5 class="pull-right">Jaswanth Yella</h5>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<nav id="bonsoul-menu">
+<ul>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="/about">Location</a>
+    <ul>
+      <li>
+        <a href="#">Hyderabad</a>
+      </li>
+      <li>
+        <a href="#">Bengaluru</a>
+      </li>
+      <li>
+        <a href="#">Mumbai</a>
+      </li>
+      <li>
+        <a href="#">Pune</a>
+      </li>
+      <li>
+        <a href="#">Delhi</a>
+      </li>
+      <li>
+        <a href="#">Noida</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Login</a>
+  </li>
+  <li>
+    <a href="#">Sign Up</a>
+  </li>
+</ul>
+</nav>
+@yield('app-content')
+<div class="wrapper">
+
+<div class="push"></div>
+</div>
+<!-- .wrapper -->
+
+<footer>
+<div class="footercontainer">
+<div class="inner-footercontainer row">
+
+<div class="col-md-2">
+  <h3>Follow Us</h3>
+  <div class="row social-logo">
+    <div class="col-md-1 col-xs-1 s-logo">
+      <a href="https://www.facebook.com/bonsoulindia" target="_BLANK">
+        <img src="{{$locUrl}}/img/footer-fb.png" alt="Bonsoul Facebook Page" />
+      </a>
+
+      <img src="{{$locUrl}}/img/footer-insta.png" alt="Bonsoul Instagram Page" />
+    </div>
+
+    <div class="col-md-1 col-xs-1 s-logo">
+      <img src="{{$locUrl}}/img/footer-twitter.png" alt="Bonsoul Twitter Page" />
+
+      <img src="{{$locUrl}}/img/footer-pinterest.png" alt="Bonsoul Pinterest Page" />
+    </div>
+  </div>
+</div>
+
+<div class="col-md-2">
+  <h3>Find More</h3>
+  <ul>
+    <li>Sign up to news letter</li>
+    <li>Blog</li>
+    <li>Press</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>About Us</h3>
+  <ul>
+    <li>Help/Contact Us</li>
+    <li>Careers</li>
+    <li><a href="/team">Team & Culture</a></li>
+    <li>Terms & Conditions</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>Oops, it's Missing?</h3>
+  <ul>
+    <li>I have a wellness venue</li>
+    <li>I know a wellness venue</li>
+  </ul>
+</div>
+
+<div class="col-md-4 rvan">
+  <h3>Bonsoul.com</h3>
+  <p>
+    Bonsoul.com is India's First Health and Beauty Network.
+                      We eliminate the extensive research of calling/surfing multiple websites or references to visit a venue, which typically leaves a consumer frustrated. Bonsoul.com helps consumers take the step to discover, review and book online.
+  </p>
+</div>
+
+</div>
+
+<div class="separator">
+<p>BROWSE BY LINKS</p>
+</div>
+
+<div class="inner-footercontainer-2 row">
+<div class="col-md-2">
+  <h3>Massage</h3>
+  <ul>
+    <li>Massage Hyderabad</li>
+    <li>Massage Bengaluru</li>
+    <li>Massage Mumbai</li>
+    <li>Massage Pune</li>
+    <li>Massage Chennai</li>
+    <li>Massage Kolkata</li>
+    <li>Massage Delhi</li>
+    <li>Massage Gurgaon</li>
+    <li>Massage Noida</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>Hair style</h3>
+  <ul>
+    <li>Hair style Hyderabad</li>
+    <li>Hair style Bengaluru</li>
+    <li>Hair style Mumbai</li>
+    <li>Hair style Pune</li>
+    <li>Hair style Chennai</li>
+    <li>Hair style Kolkata</li>
+    <li>Hair style Delhi</li>
+    <li>Hair style Gurgaon</li>
+    <li>Hair style Noida</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>Manicure</h3>
+  <ul>
+    <li>Manicure Hyderabad</li>
+    <li>Manicure Bengaluru</li>
+    <li>Manicure Mumbai</li>
+    <li>Manicure Pune</li>
+    <li>Manicure Chennai</li>
+    <li>Manicure Kolkata</li>
+    <li>Manicure Delhi</li>
+    <li>Manicure Gurgaon</li>
+    <li>Manicure Noida</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>Pedicure</h3>
+  <ul>
+    <li>Pedicure Hyderabad</li>
+    <li>Pedicure Bengaluru</li>
+    <li>Pedicure Mumbai</li>
+    <li>Pedicure Pune</li>
+    <li>Pedicure Chennai</li>
+    <li>Pedicure Kolkata</li>
+    <li>Pedicure Delhi</li>
+    <li>Pedicure Gurgaon</li>
+    <li>Pedicure Noida</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>SPAS & SALONS</h3>
+  <ul>
+    <li>SPAS & SALONS Hyderabad</li>
+    <li>SPAS & SALONS Bengaluru</li>
+    <li>SPAS & SALONS Mumbai</li>
+    <li>SPAS & SALONS Pune</li>
+    <li>SPAS & SALONS Chennai</li>
+    <li>SPAS & SALONS Kolkata</li>
+    <li>SPAS & SALONS Delhi</li>
+    <li>SPAS & SALONS Gurgaon</li>
+    <li>SPAS & SALONS Noida</li>
+  </ul>
+</div>
+
+<div class="col-md-2">
+  <h3>Stylists</h3>
+  <ul>
+    <li>Stylists Hyderabad</li>
+    <li>Stylists Bengaluru</li>
+    <li>Stylists Mumbai</li>
+    <li>Stylists Pune</li>
+    <li>Stylists Chennai</li>
+    <li>Stylists Kolkata</li>
+    <li>Stylists Delhi</li>
+    <li>Stylists Gurgaon</li>
+    <li>Stylists Noida</li>
+  </ul>
+</div>
+
+</div>
+<div class="company">
+<h5>&copy; Rvan Software Solutions Pvt Ltd</h5>
+</div>
+
+</div>
+
+</footer>
+
+<div class="modal fade" id="recommendation-modal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title">Recommend your favorite professional</h4>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="form-group no-margin">
+            <label for="field-7" class="control-label">Your precious words goes here</label>
+
+            <input id="input-id" type="number" class="rating" min=0 max=5 step=0.5 data-size="sm" >
+
+            <textarea class="form-control autogrow" id="field-7" placeholder="Write something about the service" height="250px">Wow, what an amazing professional. I'm impressed!</textarea>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-info">Send</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{$locUrl}}/js/mmenu/jquery.mmenu.min.all.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{$locUrl}}/js/bootstrap-gallery/jquery.blueimp-gallery.min.js"></script>
+<script src="{{$locUrl}}/js/bootstrap.min.js"></script>
+<script src="{{$locUrl}}/js/smooth-scroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+<script type="text/javascript" src="{{$locUrl}}/js/slickjs/slick.min.js"></script>
+<script type="text/javascript" src="{{$locUrl}}/js/responsivetabs/responsive-tabs.js"></script>
+<script type="text/javascript" src="{{$locUrl}}/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="{{$locUrl}}/js/bonvogue/bv-home.js"></script>
+<script type="text/javascript" src="{{$locUrl}}/js/bonvogue/bv-venue.js"></script>
+<script type="text/javascript" src="{{$locUrl}}/js/bonvogue/bv-search.js"></script>
+
+<!-- Gallery Plugin  -->
+
+<script src="{{$locUrl}}/js/bootstrap-gallery/bootstrap-image-gallery.min.js"></script>
+
+<script src="{{$locUrl}}/js/star-rating.min.js" type="text/javascript"></script>
+
+<script>
+
+  $(document).ready(function() {
+            $("#bonsoul-menu").mmenu({               
+               "counters": true,
+               "header": {
+                  "title": "Bonsoul",
+                  "add": true,
+                  "update": true
+               }
+            });
+
+            $('.mobile-menu').click(function(){
+                $("#bonsoul-menu").trigger("open.mm");
+            });
+
+            
+         });
+
+  $("#input-id").rating();
+
+// with plugin options
+$("#input-id").rating({'size':'md'});
+
+   $(window).load(function() {
+      $(".loader").fadeOut("slow");
+    });
+
+  $( '#myTab a' ).click( function ( e ) {
+        e.preventDefault();
+        $( this ).tab( 'show' );
+      } );
+
+      $( '#moreTabs a' ).click( function ( e ) {
+        e.preventDefault();
+        $( this ).tab( 'show' );
+      } );
+
+
+    ( function( $ ) {         
+          fakewaffle.responsiveTabs( [ 'xs', 'sm' ] );
+      } )( jQuery );
+
+    $('.img-portfolio').slick({
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 4
+    });
+        
+
+    smoothScroll.init({
+      speed: 1500, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCubic', // Easing pattern to use
+      updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+      offset: 100, // Integer. How far to offset the scrolling anchor location in pixels
+      callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
+      callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
+    });
+</script>
 </body>
 </html>

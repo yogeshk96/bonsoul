@@ -2,6 +2,10 @@
 
 use View;
 use App\Venue;
+use App\MenuCategory;
+use App\Locality;
+use App\SelfReview;
+use App\Menu;
 class MainController extends Controller {
 
 	
@@ -27,17 +31,27 @@ class MainController extends Controller {
 
 		$venuedetail = Venue::where('id','=',$venueid)->first();
 
+		$selfreviews = SelfReview::where('id','=',$venueid)->get();
+
 		$venuepics = json_decode($venuedetail->photos);
+
+		$venuepicArr = array();
 
 		if(!empty($venuepics)) {
 
-			$venuepic = $venuepics[0]->original;
-		} else {
+			foreach($venuepics as $venuep)
 
-			$venuepic = "";
+			$venuepicArr[] = $venuep->original;
 		}
 
-		return view("venue", compact("venuedetail", "venuepic"));
+		$mainpic = $venuepics[0]->original;
+
+		$venueitems = Menu::with('allitems')->get();
+
+		$localities = Locality::all();
+		$categories = MenuCategory::where('parent', '=', 0)->groupBy('name')->get();
+
+		return view("venue", compact("venuedetail", "localities", "categories", "venuepicArr", "mainpic", "selfreviews"));
 	}
 
 }

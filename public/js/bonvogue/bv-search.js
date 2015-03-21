@@ -34,7 +34,6 @@ $(function(){
 
 	});
 
-
 	$('body').click(function(){
 		$( ".mobile-filter-container" ).hide();
 	});
@@ -43,47 +42,6 @@ $(function(){
 	  $( ".mobile-filter-container" ).toggle( "slide", { direction: 'right'}, 500 );
 	  event.stopPropagation();
 	});
-
-	$('.submitfilter').click(function(){
-
-		var thisurl = document.location.pathname;
-
-		if(thisurl.indexOf("filter") !== -1) {
-
-			var explodeurl = thisurl.split("/filter/");
-			thisurl = explodeurl[0];
-		} 
-
-		var location = $(".resultscontainer").find(".inputLocation").val();
-		var services = "All";
-
-		if(!$("#allservice").prop("checked")) {
-
-			var servicearr = [];
-
-			$("input[class='service_checkbox']").each(function(){
-
-				if(this.checked) {
-
-					servicearr.push($(this).val());					
-				}
-			});
-
-			services = servicearr.join(",");
-
-		} else {
-
-			services = "All";
-		}
-		if(services == "") {
-
-			services = "All";
-		}
-
-		var loc = thisurl+"/filter/"+location+"/"+services;
-		window.location.href=loc;
-	});
-
 	
 
 });
