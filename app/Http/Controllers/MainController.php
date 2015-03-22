@@ -86,4 +86,9 @@ class MainController extends Controller {
 		return view("venue", compact("venuedetail", "localities", "categories", "venuepicArr", "mainpic", "selfreviews", "venueitems", "itemsub", "venueprice"));
 	}
 
+	public function team() {
+
+		return view('team');
+	}
+
 }

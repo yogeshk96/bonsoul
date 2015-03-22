@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/feature', 'HomeController@feature');
 
+Route::get('/team', 'MainController@team');
+
 Route::get('/profile/{userid}', 'HomeController@profile');
 
 Route::get('/search/{city}/{loca}/{treatment}', 'SearchController@seachtreatment');
