@@ -1,7 +1,6 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\MenuCategory;
 
 class Menu extends Model {
 
@@ -9,7 +8,7 @@ class Menu extends Model {
 
 	public function allitems() {
 
-		$this->hasOne('MenuCategory', 'id', 'venueId');
+		return $this->hasMany('App\MenuCategory', 'menuId', 'id');
 	}
 
 }

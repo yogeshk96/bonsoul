@@ -62,31 +62,51 @@ Professional Hair & Makeup</p> -->
 <div class="row menu-details">
 <div class="col-md-8">
     <ul class="nav nav-tabs responsive" id="myTab">
-      <li class="active"><a href="#hair">Hair Services</a></li>
-      <li><a href="#bridalmakeup">Bridal Services</a></li>
-      <li><a href="#makeup">MakeUp Services</a></li>
-      <li><a href="#tattoo">Tattoo Services</a></li>
+    {{--*/ $i = 1 /*--}}
+    @foreach($venueitems[0]->allitems as $vvalue)
+
+        @if($i == 1)
+          {{--*/ $activebox = $vvalue->name /*--}}
+          <li class="active"><a href="#{{$vvalue->name}}">{{$vvalue->name}}</a></li>
+        @else
+          <li><a href="#{{$vvalue->name}}">{{$vvalue->name}}</a></li>
+        @endif
+        {{--*/ $i = $i+1 /*--}}
+      
+    @endforeach
      
 
     </ul>
 
     <div class="tab-content responsive">
-          <div class="tab-pane active" id="hair">       
+        @foreach($venueitems[0]->allitems as $vvalue)
 
+          @if($vvalue->name == $activebox)
+            <div class="tab-pane active" id="{{$vvalue->name}}"> 
+          @else
+            <div class="tab-pane" id="{{$vvalue->name}}">
+          @endif 
+
+
+             
+
+            @foreach($itemsub[$vvalue->id] as $isub)
+             <h3>{{$isub->name}}</h3>
+             @foreach($venueprice[$isub->id] as $iprice)
              <div class="row venue-menu-item">
 
               <div class="col-md-5">
-                  <h5 class="service-name">Women's Haircut</h5>
-                  <p>Shampoo, condition, haircut, and styling product Service includes a blow dry style</p>
+                  <h5 class="service-name">{{$iprice->name}}</h5>
+                  <!--<p>Shampoo, condition, haircut, and styling product Service includes a blow dry style</p>-->
               </div>
 
               <div class="col-md-2 price-item">
-                <i class="fa fa-inr"></i> 500
+                <i class="fa fa-inr"></i>{{$iprice->price}}
              </div>
 
-             <div class="col-md-2">
+             <!--<div class="col-md-2">
               1hr 45min
-             </div>
+             </div> -->
 
              <div class="col-md-3">
                 <button type="button" class="btn btn-default add-service"><a data-scroll href="#myReservation"><i class="fa fa-plus-square"></i> Add Service</a></button>
@@ -94,42 +114,14 @@ Professional Hair & Makeup</p> -->
 
             </div>
 
-            <div class="row venue-menu-item">
+            @endforeach
 
-              <div class="col-md-5">
-                  <h5 class="service-name">Women's Haircut</h5>
-                  <p>Shampoo, condition, haircut, and styling product Service includes a blow dry style</p>
-              </div>
-
-              <div class="col-md-2 price-item">
-                <i class="fa fa-inr"></i> 500
-             </div>
-
-             <div class="col-md-2">
-              1hr 45min
-             </div>
-
-             <div class="col-md-3">
-              <button type="button" class="btn btn-default add-service"><a data-scroll href="#myReservation"><i class="fa fa-plus-square"></i> Add Service</a></button>
-
-
-             </div>
-
-            </div>
-
+            @endforeach
+            
           </div>
-
-        <div class="tab-pane" id="bridalmakeup">
-            
-           
-
-        </div>
-        <div class="tab-pane" id="makeup">
-            
           
 
-        </div>
-        <div class="tab-pane" id="tattoo">...content...</div>
+        @endforeach
 
     </div>
 
@@ -287,7 +279,7 @@ Professional Hair & Makeup</p> -->
   </div>
 
 
-
+<!--
   <div class="sub-heading">
           <h5><strong>Miscellaneous</strong></h5>
   </div>
@@ -305,6 +297,8 @@ Professional Hair & Makeup</p> -->
         </tr>
       </table>
   </div>
+
+  -->
 
 
    <div class="sub-heading">
@@ -332,41 +326,21 @@ Professional Hair & Makeup</p> -->
 
   <div class="recommendations-list">
       <table>
+        @foreach($selfreviews as $selfreview)
         <tr>
           <td>
-            <h5>Ashley J</h5>
+            <h5>{{$selfreview->name}}</h5>
            
           </td>
           <td>
-            "She makes wonderful custom products too!"
+            {{$selfreview->remarks}}
           </td>
           <td>
-             25/01/2015
+             {{date('d/m/Y', strtotime($selfreview->created))}}
           </td>
         </tr>
 
-        <tr>
-          <td>
-            <h5>Ashley J</h5>
-            
-          </td>
-          <td>
-            "Jessica really listened to and understood what I wanted. She didn't rush and made sure I was happy with my haircut."
-          </td>
-          <td>25/01/2015</td>
-        </tr>
-
-
-        <tr>
-          <td>
-            <h5>Ashley J</h5>
-            
-          </td>
-          <td>
-            "Always excited to come into the studio to get bleachified/pinkified. Amazing color and company. You're the best Jessica =)"
-          </td>
-          <td>25/01/2015</td>
-        </tr>
+        @endforeach
 
       </table>    
   </div>

@@ -6,6 +6,8 @@ use App\MenuCategory;
 use App\Locality;
 use App\SelfReview;
 use App\Menu;
+use App\MenuItem;
+
 class MainController extends Controller {
 
 	
@@ -31,7 +33,7 @@ class MainController extends Controller {
 
 		$venuedetail = Venue::where('id','=',$venueid)->first();
 
-		$selfreviews = SelfReview::where('id','=',$venueid)->get();
+		$selfreviews = SelfReview::where('venueId','=',$venueid)->get();
 
 		$venuepics = json_decode($venuedetail->photos);
 
@@ -39,19 +41,49 @@ class MainController extends Controller {
 
 		if(!empty($venuepics)) {
 
-			foreach($venuepics as $venuep)
+			foreach($venuepics as $venuep) {
 
-			$venuepicArr[] = $venuep->original;
+				$venuepicArr[] = $venuep->original;
+			}
 		}
 
 		$mainpic = $venuepics[0]->original;
 
-		$venueitems = Menu::with('allitems')->get();
+		$venueitems = Menu::where('venueId', '=', $venueid)->with(array('allitems' => function($query){
+				$query->where('parent','=',0)->whereNotIn('name', ['Membership','Classes']);
+			}))->get();
 
+
+		$itemarr = $venueitems[0]->allitems;
+
+		$itemsub = array();
+
+
+		foreach ($itemarr as $itemsingle) {
+			
+			$itemid = $itemsingle->id;
+
+			$itemsub[$itemid] = MenuCategory::where('parent','=',$itemid)->get();
+		}
+
+		$venueprice = array();
+
+		foreach ($itemsub as $venuet) {
+
+			foreach ($venuet as $value) {
+
+				$catid = $value->id;
+				$venueprice[$catid] = MenuItem::where('categoryId', '=', $catid)->get();
+			}
+			
+		}
+
+		//return $venueprice;
+		
 		$localities = Locality::all();
 		$categories = MenuCategory::where('parent', '=', 0)->groupBy('name')->get();
 
-		return view("venue", compact("venuedetail", "localities", "categories", "venuepicArr", "mainpic", "selfreviews"));
+		return view("venue", compact("venuedetail", "localities", "categories", "venuepicArr", "mainpic", "selfreviews", "venueitems", "itemsub", "venueprice"));
 	}
 
 }
