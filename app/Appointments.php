@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Appointments extends Model {
 
 	protected $table = 'appointment';
+	public $timestamps = false;
+	protected $guarded=['id'];
 
 	public function venuename()
 	{	

@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('app-content')
+<input type="hidden" id="userid" value="{{$userid}}" />
 
 <div class="profile-container">
     
@@ -109,7 +110,7 @@ Professional Hair & Makeup</p> -->
              </div> -->
 
              <div class="col-md-3">
-                <button type="button" class="btn btn-default add-service"><a data-scroll href="#myReservation"><i class="fa fa-plus-square"></i> Add Service</a></button>
+                <button type="button" class="btn btn-default add-service" itemid="{{$iprice->id}}"><a data-scroll href="#myReservation"><i class="fa fa-plus-square"></i> Add Service</a></button>
              </div>
 
             </div>
@@ -166,19 +167,29 @@ Professional Hair & Makeup</p> -->
           <div class='col-md-3'>
               <div class="form-group">
                   <div class='input-group date' id='datetimepicker1'>
-                      <input type='text' class="form-control" placeholder="Date of appointment"/>
+                      <input type='text' class="form-control" id="appointdate" placeholder="Date of appointment"/>
                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                       </span>
                   </div>
               </div>
 
-              <div class="available-timings">
-
-                  
-
+              <div class="form-group">
+                  <div class='input-group date' id='timepick'>
+                      <input type='time' class="form-control" id="appointtime" placeholder="Time of appointment"/>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                      </span>
+                  </div>
+              </div>
+              
+               <div class="form-group">
+                  <div class='input-group date' id='timepick'>
+                      <input type='number' class="form-control" id="contactno" placeholder="Contact number"/>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span>
+                      </span>
+                  </div>
               </div>
 
-              <button type="button" class="btn btn-default" id="bookappt">Book Appointment</button>
+              <button type="button" class="btn btn-default" id="bookappt" venueid="{{$venuedetail->id}}">Book Appointment</button>
           </div>
       </div>
     </div>
@@ -252,7 +263,10 @@ Professional Hair & Makeup</p> -->
             var map;
             function initialize() {
 
-            var myLatlng = new google.maps.LatLng(17.4079, 78.4424);
+            var latitude = "<?php echo $venuedetail->latitude; ?>";
+            var longitude = "<?php echo $venuedetail->longitude; ?>";
+
+            var myLatlng = new google.maps.LatLng(latitude, longitude);
 
             var mapOptions = {
             zoom: 16,
@@ -266,7 +280,7 @@ Professional Hair & Makeup</p> -->
             var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
-            title: 'Toni & Guy, Jubilee Hills'
+            title: '<?php echo $venuedetail->name; ?>'
             });
 
             }
