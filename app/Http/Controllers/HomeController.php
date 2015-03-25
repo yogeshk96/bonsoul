@@ -60,17 +60,20 @@ class HomeController extends Controller {
 
 		}
 		arsort($treatmentarr);
-		$toptreatment = array_slice($treatmentarr, 0, 5, true);
+		$toptreatment = array_slice($treatmentarr, 0, 6, true);
 
 		$toptreatarr = array();
 		$j=1;
 
 		foreach ($toptreatment as $key=>$value) {
 
-			$menus = MenuCategory::where('id', '=', $key)->first();
-			$toptreatarr[$j]['id'] = $key;
-			$toptreatarr[$j]['name'] = $menus->name;
-			$j++;
+			if($key != 153) {
+
+				$menus = MenuCategory::where('id', '=', $key)->first();
+				$toptreatarr[$j]['id'] = $key;
+				$toptreatarr[$j]['name'] = $menus['name'];
+				$j++;
+			}
 		}
 
 		$localities = Locality::all();

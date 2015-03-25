@@ -5,13 +5,14 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
   <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bootstrap.min.css" />
-
+  <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bonsoul_common.css" />
   <!-- Include jQuery.mmenu .css files -->
   <link type="text/css" href="{{$locUrl}}/js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
 
   <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/bonsoul.css" />
   <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/venue.css" />
   <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/search-result.css" />
+
 
   <link rel="stylesheet" type="text/css" href="{{$locUrl}}/css/mobile.css" />
 
@@ -162,13 +163,13 @@
 
       @else
 
-        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
-          <li class="menu-item signupmenu">
-                  <a href="#p-signup-modal" data-dismiss="modal" data-toggle="modal">Sign Up</a>
-                </li>
-                <li class="menu-item loginmenu">
-                  <a href="#login-modal" data-toggle="modal">Login</a>
-                </li>
+        <ul class="pull-right">
+          <li class="signupmenu" style="float:left;font-size:15px;margin:0px 10px;">
+            <a href="#p-signup-modal" data-dismiss="modal" data-toggle="modal" style="color:#FFF;">Sign Up</a>
+          </li>
+          <li class="loginmenu" style="float:left;font-size:15px;margin:0px 10px;">
+            <a href="#login-modal" data-toggle="modal" style="color:#FFF;">Login</a>
+          </li>
       </ul>
 
       @endif
@@ -387,9 +388,10 @@
     <div class="row login-container" style="padding: 2em 0;">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                 class="sr-only">Close</span></button>
-        <h3 class="modal-title">Login into BonSoul</h3>
+        <h3 class="modal-title" style="color:#000;">Login into BonSoul</h3>
 
         <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
+             <div class="errormsg" style="color:#a40004;"></div>
             <div class="login-form" id="signin">
                 <div class="form-group">
                     <input class="form-control bms-txt-back" type="email" placeholder="E-Mail" id="loginemail">
@@ -431,10 +433,10 @@
     <div class="row login-container">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                 class="sr-only">Close</span></button>
-        <h3 class="modal-title">Reset your password</h3>
+        <h3 class="modal-title" style="color:#000;">Sign up with BonSoul</h3>
 
         <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
-
+          <div class="errormsg" style="color:#a40004;"></div>
           <div class="login-form" id="signup">
               <div class="form-group">
                   <input class="form-control bms-txt-back" type="text" placeholder="Name" id="signupname">

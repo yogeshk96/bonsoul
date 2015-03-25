@@ -129,7 +129,7 @@ class MainController extends Controller {
 
 			$message = "test message";
 			$createappoint=Appointments::create($singleappoint);
-			$sendmail->sendEmail('yogeshk96@gmail.com', 'test subject', $message);
+			//$sendmail->sendEmail('yogeshk96@gmail.com', 'test subject', $message);
 			$out =1;
 
 		} else {
@@ -162,6 +162,7 @@ class MainController extends Controller {
 		$email = Request::input('email');
 		$pass = Request::input('pass');
 		$pass = md5($pass);
+		$out = [];
 
 		$user = User::where('email', '=', $email)->where('password', '=', $pass)->first();
 		if($user) {
@@ -169,11 +170,12 @@ class MainController extends Controller {
 			$userid = $user->id;
 			//setting cookie for userid
 			$setcookie->set_cookie('userid', $userid, '+');
-			$out = $user->name;
+			array_push($out, $user->name);
+			array_push($out, $user->id);
 
 		} else {
 
-			$out = 0;
+			array_push($out, 0);
 		}
 
 		return $out;

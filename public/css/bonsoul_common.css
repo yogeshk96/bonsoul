@@ -1,82 +1,5 @@
 
-/** recommendation-container **/
 
-.recommendation-container{
-    width: 25%;
-    margin-top: 8%;
-    border-color:#75CBB8; 
-    border-width: 2px;
-    border-style: solid;
-    
-}
-
-.recommendation-container hr{
-    border-radius: 2px;
-    border-style: solid;
-    border-color: #75CBB8;
-}
-
-.recommendation-container a{
-    color: #75CBB8;
-    text-decoration: none;
-}
-
-.recommendation-container a:hover {
-    text-decoration: none;
-    color: #75CBB8;
-}
-
-.recommend-text{
-    font-family: 'Open Sans';
-    text-align: center;
-    font-size: 1.2em;
-    word-spacing: 0.5em;
-}
-
-.flex-container-1{    
-    background-color: #7FC7B5;    
-    text-align: center;
-}
-
-.flex-container-1  h2 {
-    font-family: 'Znikomit','Open Sans';
-    font-weight: bold; 
-    font-size: 2.5em;
-}
-
-.flex-container-1 h3{
-    font-size: 18px;
-}
-
-.flex-container-1 .findoutmore h2{
-    padding-top: 5px;
-    font-size: 15px;
-}
-
-.flex-container-1 hr{
-    border-width: 0.2em;
-    border-color: white;
-    margin: 0;
-}
-
-.flex-container-1 a{
-    color: white;
-    text-decoration: none;
-}
-
-.flex-container-1 a:hover {
-    text-decoration: none;
-    color: white;
-}
-
-.findoutmore{
-    padding: 0.25em;
-    font-weight: bold;
-    background-color: #B2DED3;
-}
-
-
-/** End of recommendation-container **/
 
 
 /*STATIC PAGES*/
@@ -1107,12 +1030,6 @@ a.delete:hover {
     color: #999;
 }
 
-.profile-container {
-    width: 80%;
-    margin: 5em auto !important;
-    position: relative;
-    padding-top: 10em;
-}
 
 .btn-login {
     background-color: #73D7BD !important;
@@ -1198,47 +1115,6 @@ a.delete:hover {
 
 #p-reset-modal .login-container {
     width: 40%;
-}
-
-/*Profile*/
-.profile-container {
-    width: 40em !important;
-    margin-top: 10em !important;
-}
-
-.profile-container .tab-content {
-    margin: 5em 0;
-    width: 40em;
-}
-
-.profile-container .bs-pills {
-    font-size: 0.7em;
-    letter-spacing: normal;
-}
-
-.profile-container .btn {
-    font-size: 1.5em;
-}
-
-.profile-container .label {
-    color: inherit;
-    font-size: 1.5em;
-    font-weight: normal;
-    vertical-align: middle;
-    letter-spacing: normal;
-    padding: 0.4em;
-    display: block;
-    line-height: 1.428571429;
-    text-align: left;
-}
-
-.profile-container .form-control {
-    font-weight: normal !important;
-}
-
-.profile-container .form-control[readonly],
-.profile-container .form-control[disabled] {
-    background-color: rgba(106, 202, 179, 0.5);
 }
 
 /*CONTEST*/
@@ -1404,33 +1280,6 @@ a.delete:hover {
 /**End of Flex-Container**/
 
 
-/** Email Request Box **/
-
-.container-3{
-    padding-left: 1%;
-}
-
-.inner-container-3 input, button{
-    background-color:  #7FC7B5;
-    height: 50px;
-}
-
-.inner-container-3 input {
-    width: 75%;
-    border-radius: 2px;
-    border-color: #7FC7B5;
-    color: white;
-    
-}
-
-.submit{
-    margin-left:5%;
-    border-radius: 2px;
-    border-color: #7FC7B5;
-}
-/** End of Email Request Box **/
-
-
 /**Down Arrow **/
 
 .container-4 span{
@@ -1467,32 +1316,9 @@ a.delete:hover {
     color: white;
 }
 
-.inner-container-5 .btn{
-    background-color: #7FC7B5;
-    border-color: #7FC7B5;
-}
-
 .submit{
      background-color: #7FC7B5;
     border-color: #7FC7B5;
-}
-
-.inner-container-5 input, button{
-    background-color:  #7FC7B5;
-    height: 50px;
-    margin-left: 3%;
-}
-
-.inner-container-5 input {
-    width: 40%;
-    border-radius: 2px;
-    border-color: #7FC7B5;
-    color: white;
-}
-
-.inner-container-5 h2{
-    font-size: 35px;
-    color: white;
 }
 
 .txt-3{

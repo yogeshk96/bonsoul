@@ -100,11 +100,17 @@ $(function () {
 	          success:function(result)
 	          {
 
-	            $(".signupmenu").hide();
-	          	$(".loginmenu").text('Wecome '+result);
+	          	if(result[0] != 0){
 
+		            $(".signupmenu").hide();
+		          	$(".loginmenu").text('Wecome '+result[0]);
+		          	$("#userid").val(result[1]);
 
-	          	$('#login-modal').modal('hide');
+		          	$('#login-modal').modal('hide');
+		        } else {
+
+		        	$(".errormsg").text("Wrong username/password.");
+		        }
 	          }
 	        });
 		}

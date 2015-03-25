@@ -256,9 +256,10 @@
     <div class="row login-container" style="padding: 2em 0;">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                 class="sr-only">Close</span></button>
-        <h3 class="modal-title">Login into BonSoul</h3>
+        <h3 class="modal-title" style="color:#000;">Login into BonSoul</h3>
 
         <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
+        <div class="errormsg" style="color:#a40004;"></div>
             <div class="login-form" id="signin">
                 <div class="form-group">
                     <input class="form-control bms-txt-back" type="email" placeholder="E-Mail" id="loginemail">
@@ -300,9 +301,10 @@
     <div class="row login-container">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                 class="sr-only">Close</span></button>
-        <h3 class="modal-title">Reset your password</h3>
+        <h3 class="modal-title" style="color:#000;">Sign up with BonSoul</h3>
 
         <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
+        <div class="errormsg" style="color:#a40004;"></div>
 
           <div class="login-form" id="signup">
               <div class="form-group">
