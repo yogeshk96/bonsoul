@@ -13,7 +13,7 @@ abstract class Controller extends BaseController {
 	public function __construct()
   	{
 	    // Fetch the User object
-	    $locUrl = "/bonsoul/public";
+	    $locUrl = "";
 
 	    $cdnUrl = "http://d2rmoau0tbh3pz.cloudfront.net";
 	 
