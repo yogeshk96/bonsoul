@@ -80,5 +80,97 @@ $(function () {
 
 	});
 
+	$(document).on("click", ".btn-login", function(){
+
+		var email = $("#loginemail").val(),
+			pass = $("#loginpassword").val();
+
+		if(email == "") {
+
+			alert("Please enter email id.");
+		} else if(pass == "") {
+
+			alert("Please enter your password.");
+		} else {
+
+			$.ajax({
+	          type:'GET',
+	          url:'/bonsoul/public/login',
+	          data:{email:email, pass:pass},
+	          success:function(result)
+	          {
+
+	            $(".signupmenu").hide();
+	          	$(".loginmenu").text('Wecome '+result);
+
+
+	          	$('#login-modal').modal('hide');
+	          }
+	        });
+		}
+	});
+
+	$(document).on("click", ".btn-signup", function(){
+
+		var email = $("#signupemail").val(),
+			pass = $("#signuppassword").val(),
+			cpass = $("#confpassword").val(),
+			name = $("#signupname").val();
+
+		if(name == "") {
+
+			alert("Please enter your name.");
+		}
+		else if(email == "") {
+
+			alert("Please enter email id.");
+		} else if(pass == "") {
+
+			alert("Please enter your password.");
+		} else if(cpass == "") {
+
+			alert("Please confirm password.");
+		} else if(pass != cpass) {
+
+			alert("Password do not match.");
+		} else {
+
+			$.ajax({
+	          type:'GET',
+	          url:'/bonsoul/public/siteregister',
+	          data:{email:email, pass:pass, cpass:cpass, name:name},
+	          success:function(result)
+	          {
+
+	          	$(".signupmenu").hide();
+	          	$(".loginmenu").text('Wecome '+result);
+
+
+	          	$('#p-signup-modal').modal('hide');
+
+	            console.log(result);
+	          }
+	        });
+		}
+	});
+
+	$(document).on("click", ".logout-btn", function(){
+
+		$.ajax({
+	      type:'GET',
+	      url:'/bonsoul/public/logout',
+	      success:function(result)
+	      {
+	      	console.log(result);
+
+	      	$("#userid").val(0);
+
+	        $(".signupmenu").show();
+	      	$(".loginmenu").text('<a href="#login-modal" data-toggle="modal">Login</a>');
+
+	      }
+	    });
+	});
+
 
 });

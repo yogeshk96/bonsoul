@@ -11,9 +11,67 @@
 |
 */
 
+/**
+* for creating new user
+*/
+class SetCookie
+{
+	
+	public function set_cookie($cookiename, $userid, $set) {
+
+     	if($set == "+")
+          { $cookie_expire = time()+60*60*24*30; }
+	    else 
+	          { $cookie_expire = time()-60*60*24*30; }		
+
+	    setcookie($cookiename, $userid, $cookie_expire, '/');
+
+	} 
+}
+
+class SendMail 
+{
+	
+	function sendEmail($to, $subject, $message)
+	{
+		include "AWSSDKforPHP/sdk.class.php";
+ 
+	    $amazonSes = new AmazonSES(array(
+	        'key' => 'AKIAIDPZ3DQ3UG27MPWQ',
+	        'secret' => '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'
+	    ));
+	  //  $amazonSes->verify_email_address('bonsoul@bonsoul.com');
+	   $response = $amazonSes->send_email('bonsoul@bonsoul.com',
+	        array('ToAddresses' => array($to)),
+	        array(
+	            'Subject.Data' => $subject,
+	            'Body.Html.Data' => $message,
+	        )
+	    );
+	    if (!$response->isOK())
+	    {
+	        echo "<pre>";
+	        print_r($response);
+	        echo "</pre>";
+	    }
+
+	}
+
+}
+
 Route::get('/', 'HomeController@index');
 
+Route::get('/book_appointment', 'MainController@book_appointment');
+
+Route::get('/login', 'MainController@login');
+
+Route::get('/logout', 'MainController@logout');
+
+Route::get('/siteregister', 'MainController@siteregister');
+
 Route::get('/feature', 'HomeController@feature');
+
+Route::get('/team', 'MainController@team');
 
 Route::get('/profile/{userid}', 'HomeController@profile');
 

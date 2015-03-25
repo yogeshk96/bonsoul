@@ -102,25 +102,12 @@
             <input type="email" class="form-control bv-search-prof-serv" id="autocomplete-prof" placeholder="Search for professional/service">
             <div class="prof-services">
               <ul>
-                <li>All Treatments</li>
+                @foreach($categories as $category)
+              
+                  <li>{{$category->name}}</li>
 
-                <li>Body</li>
 
-                <li>Classes</li>
-
-                <li>Face</li>
-
-                <li>Hair</li>
-
-                <li>Hair Removal</li>
-
-                <li>Massage</li>
-
-                <li>Membership</li>
-
-                <li>Nails</li>
-
-                <li>Skin</li>
+                @endforeach
 
               </ul>
             </div>
@@ -130,11 +117,11 @@
             <input type="text" name="location" id="inputLocation" class="form-control selectvenue bv-loc-input" placeholder="Location">
             <div class="curr-loc">
               <ul>
-                <li>Hyderabad</li>
-                <li>Bangalore</li>
-                <li>Delhi</li>
-                <li>Mumbai</li>
-                <li>Ahmedabad</li>
+                 @foreach($localities as $locality)
+                    @if ($locality->cityId == 1)
+                    <li>{{$locality->name}}</li>
+                    @endif
+                  @endforeach
               </ul>
             </div>
           </div>
@@ -149,6 +136,8 @@
       </div>
 
       <div class="col-xs-6 col-md-3 profile">
+
+      @if($userid)
 
         <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="{{$locUrl}}/img/user.png">
 
@@ -165,11 +154,24 @@
         -->
         <li class="divider"></li>
         <li>
-          <a tabindex="-1" href="#">Logout</a>
+          <a tabindex="-1" class="logout-btn">Logout</a>
         </li>
       </ul>
 
       <h5 class="pull-right">Jaswanth Yella</h5>
+
+      @else
+
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
+          <li class="menu-item signupmenu">
+                  <a href="#p-signup-modal" data-dismiss="modal" data-toggle="modal">Sign Up</a>
+                </li>
+                <li class="menu-item loginmenu">
+                  <a href="#login-modal" data-toggle="modal">Login</a>
+                </li>
+      </ul>
+
+      @endif
 
     </div>
   </div>
@@ -379,6 +381,119 @@
 <h5>&copy; Rvan Software Solutions Pvt Ltd</h5>
 </div>
 
+</div>
+
+<div class="modal fade" id="login-modal" style="overflow:hidden;">
+    <div class="row login-container" style="padding: 2em 0;">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span></button>
+        <h3 class="modal-title">Login into BonSoul</h3>
+
+        <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
+            <div class="login-form" id="signin">
+                <div class="form-group">
+                    <input class="form-control bms-txt-back" type="email" placeholder="E-Mail" id="loginemail">
+                </div>
+                <div class="form-group">
+                    <input class="form-control bms-txt-back" type="password" placeholder="Password" id="loginpassword">
+                </div>
+                <div class="form-group" style="width:100%;">
+                    <button class="btn btn-bms btn-login"><span style="font-size:12px;">Sign In</span></button>
+                    <div class="p-reset-btn">
+                        <a href="#p-reset-modal" data-dismiss="modal" data-toggle="modal">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="form-toggle-info text-center">
+                    <p style="font-size:13px;">Don't have a BonSoul account?</p>
+                    <a href="#p-signup-modal" data-dismiss="modal" data-toggle="modal">Sign Up</a>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="social-login col-sm-6" style="padding-top:0;min-height:150px;">
+            <div class="login-row">
+                <button class="btn btn-bms btn-login fb-login">
+                    <i class="fa fa-facebook" ></i><span>Sign In with Facebook</span>
+                </button>
+            </div>
+            <div class="login-row">
+                <button class="btn btn-bms btn-login google-login">
+                    <i class="fa fa-google-plus"></i><span>Sign In with Google</span>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal fade" id="p-signup-modal">
+    <div class="row login-container">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span></button>
+        <h3 class="modal-title">Reset your password</h3>
+
+        <div class="classic-login col-sm-6" style="padding-top:0;min-height:120px;">
+
+          <div class="login-form" id="signup">
+              <div class="form-group">
+                  <input class="form-control bms-txt-back" type="text" placeholder="Name" id="signupname">
+              </div>
+              <div class="form-group">
+                  <input class="form-control bms-txt-back" type="email" placeholder="E-Mail" id="signupemail">
+              </div>
+              <div class="form-group">
+                  <input class="form-control bms-txt-back" type="password" placeholder="Password" id="signuppassword">
+              </div>
+               <div class="form-group">
+                  <input class="form-control bms-txt-back" type="password" placeholder="Confirm password" id="confpassword">
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-bms btn-signup"><span>Sign Up</span></button>
+              </div>
+              <div class="form-toggle-info text-center">
+                  <p>Have a BonSoul account?</p>
+                  <a href="#login-modal" data-dismiss="modal" data-toggle="modal">Sign In</a>
+              </div>
+          </div>
+        </div>
+
+           <div class="social-login col-sm-6" style="padding-top:0;min-height:150px;">
+            <div class="login-row">
+                <button class="btn btn-bms btn-login fb-login">
+                    <i class="fa fa-facebook" ></i><span>Sign In with Facebook</span>
+                </button>
+            </div>
+            <div class="login-row">
+                <button class="btn btn-bms btn-login google-login">
+                    <i class="fa fa-google-plus"></i><span>Sign In with Google</span>
+                </button>
+            </div>
+        </div>
+       
+    </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="p-reset-modal">
+    <div class="row login-container">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span></button>
+        <h3 class="modal-title">Reset your password</h3>
+
+        <div class="text-center">
+            <div class="login-form" id="forgot-password">
+                <div class="form-group">
+                    <input class="form-control bms-txt-back" type="email" placeholder="E-Mail" id="email">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-bms btn-login">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </footer>
