@@ -163,6 +163,8 @@ $(function () {
 	      {
 	      	console.log(result);
 
+	      	$("#userid").val(0);
+
 	        $(".signupmenu").show();
 	      	$(".loginmenu").text('<a href="#login-modal" data-toggle="modal">Login</a>');
 

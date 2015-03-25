@@ -137,6 +137,8 @@
 
       <div class="col-xs-6 col-md-3 profile">
 
+      @if($userid)
+
         <img class="dropdown-toggle img-circle displayimage pull-right" data-toggle="dropdown" src="{{$locUrl}}/img/user.png">
 
         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
@@ -157,6 +159,19 @@
       </ul>
 
       <h5 class="pull-right">Jaswanth Yella</h5>
+
+      @else
+
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
+          <li class="menu-item signupmenu">
+                  <a href="#p-signup-modal" data-dismiss="modal" data-toggle="modal">Sign Up</a>
+                </li>
+                <li class="menu-item loginmenu">
+                  <a href="#login-modal" data-toggle="modal">Login</a>
+                </li>
+      </ul>
+
+      @endif
 
     </div>
   </div>
