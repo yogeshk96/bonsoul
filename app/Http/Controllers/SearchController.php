@@ -85,7 +85,8 @@ class SearchController extends Controller {
 	        	array_push($venueArr, $venuedetail);
 	        }
         }
-//print_r($menuitems);
+
+//return $menuitems;
 		$localities = Locality::all();
 		$categories = MenuCategory::where('parent', '=', 0)->groupBy('name')->get();
 		return view('search', compact("categories", "localities", "relatedtreatments", "venueArr", "rating", "menuitems", "venuepicarr", "venuenamearr", "city"));

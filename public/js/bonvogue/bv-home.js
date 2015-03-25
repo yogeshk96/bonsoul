@@ -95,7 +95,7 @@ $(function () {
 
 			$.ajax({
 	          type:'GET',
-	          url:'/bonsoul/public/login',
+	          url:locurl+'/login',
 	          data:{email:email, pass:pass},
 	          success:function(result)
 	          {
@@ -143,7 +143,7 @@ $(function () {
 
 			$.ajax({
 	          type:'GET',
-	          url:'/bonsoul/public/siteregister',
+	          url:locurl+'/siteregister',
 	          data:{email:email, pass:pass, cpass:cpass, name:name},
 	          success:function(result)
 	          {

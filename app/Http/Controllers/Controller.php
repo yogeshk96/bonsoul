@@ -13,13 +13,23 @@ abstract class Controller extends BaseController {
 	public function __construct()
   	{
 	    // Fetch the User object
-	    $locUrl = "";
+	    $locUrl = "/bonsoul/public";
 
 	    $cdnUrl = "http://d2rmoau0tbh3pz.cloudfront.net";
+
+
+        if(isset($_COOKIE['userid'])) {
+
+        	$userid = $_COOKIE['userid'];
+        } else {
+
+        	$userid = 0;
+        }
 	 
 	    // Sharing is caring
 	    View::share('locUrl', $locUrl);
 	    View::share('cdnUrl', $cdnUrl);
+	    View::share('userid', $userid);
   	}
 
 	
