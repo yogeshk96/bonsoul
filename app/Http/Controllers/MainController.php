@@ -11,7 +11,6 @@ use App\MenuItem;
 use App\User;
 use Request;
 use SetCookie;
-use SendMail;
 
 class MainController extends Controller {
 
@@ -100,7 +99,7 @@ class MainController extends Controller {
 		return view('team');
 	}
 
-	public function book_appointment(SendMail $sendmail) {
+	public function book_appointment() {
 
 		$userid = Request::input('userid');
 		$venueid = Request::input('venueid');
@@ -129,7 +128,6 @@ class MainController extends Controller {
 
 			$message = "test message";
 			$createappoint=Appointments::create($singleappoint);
-			//$sendmail->sendEmail('yogeshk96@gmail.com', 'test subject', $message);
 			$out =1;
 
 		} else {
