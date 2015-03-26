@@ -20,16 +20,13 @@ class SetCookie
 	public function set_cookie($cookiename, $userid, $set) {
 
      	if($set == "+")
-          { $cookie_expire = time()+60*60*24*30; }
+        { $cookie_expire = time()+60*60*24*30; }
 	    else 
 	          { $cookie_expire = time()-60*60*24*30; }		
 
 	    setcookie($cookiename, $userid, $cookie_expire, '/');
 
-	} 
-}
-
-
+		} 
 }
 
 Route::get('/', 'HomeController@index');
